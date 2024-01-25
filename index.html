@@ -1,0 +1,867 @@
+<HTML>
+<head> Roll the Dice! </head>
+
+<style>
+    body {
+        display: grid;
+             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+             gap: 10px;
+    }
+
+.human {
+grid-row-start: 1;
+grid-row-end: 2;
+grid-column-start: 1;
+grid-column-end: 2;
+}
+
+.diceone {
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 1;
+grid-column-end: 2;
+}
+
+.dicetwo{
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 2;
+grid-column-end: 3;    
+}
+
+.dicethree {
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 3;
+grid-column-end: 4;    
+}
+
+.dicefour {
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 4;
+grid-column-end: 5;       
+}
+
+.dicefive {
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 5;
+grid-column-end: 6;       
+}
+
+.total {
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 6;
+grid-column-end: 7;       
+}
+.checkboxone {
+grid-row-start: 3;
+grid-row-end: 4; 
+grid-column-start: 1;
+grid-column-end: 2;       
+}
+
+.checkboxtwo {
+grid-row-start: 3;
+grid-row-end: 4; 
+grid-column-start: 2;
+grid-column-end: 3; 
+}
+
+.checkboxthree {
+grid-row-start: 3;
+grid-row-end: 4; 
+grid-column-start: 3;
+grid-column-end: 4;     
+}
+
+.checkboxfour {
+grid-row-start: 3;
+grid-row-end: 4; 
+grid-column-start: 4;
+grid-column-end: 5; 
+}
+
+.checkboxfive {
+grid-row-start: 3;
+grid-row-end: 4; 
+grid-column-start: 5;
+grid-column-end: 6;     
+}
+
+.computerwins {
+grid-row-start: 4;
+grid-row-end: 5; 
+grid-column-start: 1;
+grid-column-end: 2;     
+}
+
+.dicesix {
+grid-row-start: 5;
+grid-row-end: 6; 
+grid-column-start: 1;
+grid-column-end: 2;     
+}
+
+.diceseven {
+grid-row-start: 5;
+grid-row-end: 6; 
+grid-column-start: 2;
+grid-column-end: 3;    
+}
+
+.diceeight {
+grid-row-start: 5;
+grid-row-end: 6; 
+grid-column-start: 3;
+grid-column-end: 4;    
+}
+
+.dicenine {
+grid-row-start: 5;
+grid-row-end: 6; 
+grid-column-start: 4;
+grid-column-end: 5;    
+}
+
+.diceten {
+grid-row-start: 5;
+grid-row-end: 6; 
+grid-column-start: 5;
+grid-column-end: 6;    
+}
+
+.checkboxsix {
+grid-row-start: 6;
+grid-row-end: 7; 
+grid-column-start: 1;
+grid-column-end: 2;    
+}
+
+.checkboxseven {
+grid-row-start: 6;
+grid-row-end: 7; 
+grid-column-start: 2;
+grid-column-end: 3;    
+}
+
+.checkboxeight {
+grid-row-start: 6;
+grid-row-end: 7; 
+grid-column-start: 3;
+grid-column-end: 4;
+}
+
+.checkboxnine {
+grid-row-start: 6;
+grid-row-end: 7; 
+grid-column-start: 4;
+grid-column-end: 5;
+}
+
+.checkboxten{
+grid-row-start: 6;
+grid-row-end: 7; 
+grid-column-start: 5;
+grid-column-end: 6;
+}
+
+.totaltwo {
+grid-row-start: 5;
+grid-row-end: 6; 
+grid-column-start: 6;
+grid-column-end: 7;
+}
+
+.rollagain {
+grid-row-start: 8;
+grid-row-end: 9; 
+grid-column-start: 1;
+grid-column-end: 2;    
+}
+
+.amountofrolls{
+grid-row-start: 8;
+grid-row-end: 9; 
+grid-column-start: 2;
+grid-column-end: 4;    
+}
+
+.newround{
+grid-row-start: 8;
+grid-row-end: 9; 
+grid-column-start: 5;
+grid-column-end: 7;    
+}
+ </style>
+ <script>
+var one;
+var two;
+var three;
+var four;
+var five;
+var six;
+var seven;
+var eight;
+var nine;
+var ten;
+var c = 0;
+var d;
+var e;
+var f = six && seven && eight && nine;
+
+    function diceone() {
+document.getElementById("diceone").src = "1.png";
+document.getElementById("diceone").src = "2.png";
+document.getElementById("diceone").src = "3.png";
+document.getElementById("diceone").src = "4.png";
+document.getElementById("diceone").src = "5.png";
+document.getElementById("diceone").src = "6.png";
+
+
+if (document.getElementById("checkone").checked == false) {one = (Math.floor(Math.random() * 6)+1);}
+
+
+if (one == 1)
+    {document.getElementById("diceone").src = "1.png";}
+
+    if (one == 2) 
+    {document.getElementById("diceone").src = "2.png";}
+
+    if (one == 3) 
+    {document.getElementById("diceone").src = "3.png";}
+
+    if (one == 4) 
+    {document.getElementById("diceone").src = "4.png";}
+
+    if (one == 5) 
+    {document.getElementById("diceone").src = "5.png";}
+
+    if (one == 6) 
+    {document.getElementById("diceone").src = "6.png";}
+
+    
+ 
+
+if (document.getElementById("checktwo").checked == false) {two = (Math.floor(Math.random() * 6)+1);}
+
+
+
+if (two == 1) 
+    {document.getElementById("dicetwo").src = "1.png";}
+
+    if (two == 2) 
+    {document.getElementById("dicetwo").src = "2.png";}
+
+    if (two == 3) 
+    {document.getElementById("dicetwo").src = "3.png";}
+
+    if (two == 4) 
+    {document.getElementById("dicetwo").src = "4.png";}
+
+    if (two == 5) 
+    {document.getElementById("dicetwo").src = "5.png";}
+
+    if (two == 6) 
+    {document.getElementById("dicetwo").src = "6.png";}
+
+
+
+    if (document.getElementById("checkthree").checked == false) {three = (Math.floor(Math.random() * 6)+1);}
+
+
+    if (three == 1) 
+    {document.getElementById("dicethree").src = "1.png";}
+
+    if (three= 2) 
+    {document.getElementById("dicethree").src = "2.png";}
+
+    if (three == 3) 
+    {document.getElementById("dicethree").src = "3.png";}
+
+    if (three == 4) 
+    {document.getElementById("dicethree").src = "4.png";}
+
+    if (three == 5) 
+    {document.getElementById("dicethree").src = "5.png";}
+
+    if (three == 6) 
+    {document.getElementById("dicethree").src = "6.png";}
+
+     
+    
+if (document.getElementById("checkfour").checked == false) {four = (Math.floor(Math.random() * 6)+1);}
+   
+
+if (four == 1) 
+    {document.getElementById("dicefour").src = "1.png";}
+
+    if (four == 2) 
+    {document.getElementById("dicefour").src = "2.png";}
+
+    if (four == 3) 
+    {document.getElementById("dicefour").src = "3.png";}
+
+    if (four == 4) 
+    {document.getElementById("dicefour").src = "4.png";}
+
+    if (four == 5) 
+    {document.getElementById("dicefour").src = "5.png";}
+
+    if (four == 6) 
+    {document.getElementById("dicefour").src = "6.png";}
+
+    
+    if (document.getElementById("checkfive").checked == false) {five = (Math.floor(Math.random() * 6)+1);}
+    
+    if (five == 1) 
+    {document.getElementById("dicefive").src = "1.png";}
+
+    if (five == 2) 
+    {document.getElementById("dicefive").src = "2.png";}
+
+    if (five == 3) 
+    {document.getElementById("dicefive").src = "3.png";}
+
+    if (five == 4) 
+    {document.getElementById("dicefive").src = "4.png";}
+
+    if (five == 5) 
+    {document.getElementById("dicefive").src = "5.png";}
+
+    if (five == 6) 
+    {document.getElementById("dicefive").src = "6.png";}
+
+    
+    
+    if (document.getElementById("checksix").checked == false) {six = (Math.floor(Math.random() * 6)+1);}
+
+if (six == 1) 
+    {document.getElementById("dicesix").src = "1.png";}
+
+    if (six == 2) 
+    {document.getElementById("dicesix").src = "2.png";}
+
+    if (six == 3) 
+    {document.getElementById("dicesix").src = "3.png";}
+
+    if (six == 4) 
+    {document.getElementById("dicesix").src = "4.png";}
+
+    if (six == 5) 
+    {document.getElementById("dicesix").src = "5.png";}
+
+    if (six == 6) 
+    {document.getElementById("dicesix").src = "6.png";}
+
+    
+    
+    if (document.getElementById("checkseven").checked == false) {seven = (Math.floor(Math.random() * 6)+1);}
+
+if (seven == 1) 
+    {document.getElementById("diceseven").src = "1.png";}
+
+    if (seven == 2) 
+    {document.getElementById("diceseven").src = "2.png";}
+
+    if (seven == 3) 
+    {document.getElementById("diceseven").src = "3.png";}
+
+    if (seven == 4) 
+    {document.getElementById("diceseven").src = "4.png";}
+
+    if (seven == 5) 
+    {document.getElementById("diceseven").src = "5.png";}
+
+    if (seven  == 6) 
+    {document.getElementById("diceseven").src = "6.png";}
+    
+    
+    
+    if (document.getElementById("checkeight").checked == false) {eight = (Math.floor(Math.random() * 6)+1);}
+
+if (eight == 1) 
+    {document.getElementById("diceeight").src = "1.png";}
+
+    if (eight == 2) 
+    {document.getElementById("diceeight").src = "2.png";}
+
+    if (eight== 3) 
+    {document.getElementById("diceeight").src = "3.png";}
+
+    if (eight== 4) 
+    {document.getElementById("diceeight").src = "4.png";}
+
+    if (eight == 5) 
+    {document.getElementById("diceeight").src = "5.png";}
+
+    if (eight == 6) 
+    {document.getElementById("diceeight").src = "6.png";}
+
+    
+    
+    if (document.getElementById("checknine").checked == false) {nine = (Math.floor(Math.random() * 6)+1);}
+
+if (nine == 1) 
+    {document.getElementById("dicenine").src = "1.png";}
+
+    if (nine == 2) 
+    {document.getElementById("dicenine").src = "2.png";}
+
+    if (nine== 3) 
+    {document.getElementById("dicenine").src = "3.png";}
+
+    if (nine== 4) 
+    {document.getElementById("dicenine").src = "4.png";}
+
+    if (nine == 5) 
+    {document.getElementById("dicenine").src = "5.png";}
+
+    if (nine == 6) 
+    {document.getElementById("dicenine").src = "6.png";}
+
+    
+    if (document.getElementById("checkten").checked == false) {ten = (Math.floor(Math.random() * 6)+1);}
+
+if (ten == 1) 
+    {document.getElementById("diceten").src = "1.png";}
+
+    if (ten == 2) 
+    {document.getElementById("diceten").src = "2.png";}
+
+    if (ten== 3) 
+    {document.getElementById("diceten").src = "3.png";}
+
+    if (ten== 4) 
+    {document.getElementById("diceten").src = "4.png";}
+
+    if (ten == 5) 
+    {document.getElementById("diceten").src = "5.png";}
+
+    if (ten == 6) 
+    {document.getElementById("diceten").src = "6.png";}
+        
+    document.getElementById("firsttotal").innerHTML = " You rolled a " + (one + two + three + four + five );
+
+
+if (one + two + three + four + five == 1) { mynumberarray[1]++;}
+ if (one + two + three + four + five == 2) { mynumberarray[2]++;}
+ if (one + two + three + four + five == 3) { mynumberarray[3]++;}
+ if (one + two + three + four + five == 4) { mynumberarray[4]++;}
+ if (one + two + three + four + five == 5) { mynumberarray[5]++;}
+ if (five + six + seven + eight + nine + ten == 6) { mynumberarray[6]++;}
+ if (five + six + seven + eight + nine + ten == 7) { mynumberarray[7]++;}
+ if (five + six + seven + eight + nine + ten == 8) { mynumberarray[8]++;}
+ if (five + six + seven + eight + nine + ten == 9) { mynumberarray[9]++;}
+ if (five + six + seven + eight + nine + ten == 10) { mynumberarray[10]++;}
+    
+    
+      
+         //total two:
+ document.getElementById("secondtotal").innerHTML = " You rolled a " + ( six + seven + eight + nine + ten );
+ 
+ if (one + two + three + four + five == 1) { mynumberarray[1]++;}
+ if (one + two + three + four + five == 2) { mynumberarray[2]++;}
+ if (one + two + three + four + five == 3) { mynumberarray[3]++;}
+ if (one + two + three + four + five == 4) { mynumberarray[4]++;}
+ if (one + two + three + four + five == 5) { mynumberarray[5]++;}
+ if (five + six + seven + eight + nine + ten == 6) { mynumberarray[6]++;}
+ if (five + six + seven + eight + nine + ten == 7) { mynumberarray[7]++;}
+ if (five + six + seven + eight + nine + ten == 8) { mynumberarray[8]++;}
+ if (five + six + seven + eight + nine + ten == 9) { mynumberarray[9]++;}
+ if (five + six + seven + eight + nine + ten == 10) { mynumberarray[10]++;}
+ 
+    
+
+ c++;
+
+document.getElementById("amountoftimesrolled").innerHTML = " The total rolls " + (c);
+
+    
+d = one + two + three + four + five;
+
+e = six + seven + eight + nine + ten;
+
+
+
+if( d == 21)
+{document.getElementById("firsttotal").innerHTML = " You Win! ";}
+
+
+if( e == 21)
+{document.getElementById("secondtotal").innerHTML = " Computer Wins! ";}
+
+
+if(d == 21 && e == 21)
+{document.getElementById("secondtotal").innerHTML = " Tie! ";
+ document.getElementById("total").innerHTML = " Tie! ";}
+
+
+
+
+
+if(six == 5)
+{document.getElementById("checksix").checked = true;}
+
+if(seven == 5)
+{document.getElementById("checkseven").checked = true;}
+
+if(eight == 5)
+{document.getElementById("checkeight").checked = true;}
+
+if(nine == 5)
+{document.getElementById("checknine").checked = true;}
+
+
+if(f == 5)
+{document.getElementById("checkten").check = true;}
+
+ }
+
+function newround() {
+one = 0;
+two = 0;
+three = 0;
+four = 0;
+five = 0;
+six = 0;
+seven = 0;
+eight = 0;
+nine = 0;
+ten = 0;
+
+document.getElementById("checkone").checked = false;
+document.getElementById("checktwo").checked = false;
+document.getElementById("checkthree").checked = false;
+document.getElementById("checkfour").checked = false;
+document.getElementById("checkfive").checked = false;
+document.getElementById("checksix").checked = false;
+document.getElementById("checkseven").checked = false;
+document.getElementById("checkeight").checked = false;
+document.getElementById("checknine").checked = false;
+document.getElementById("checkten").checked = false;
+
+
+document.getElementById("diceone").src= "1.png";
+document.getElementById("dicetwo").src= "1.png"
+document.getElementById("dicethree").src= "1.png";
+document.getElementById("dicefour").src= "1.png";
+document.getElementById("dicefive").src= "1.png";
+document.getElementById("dicesix").src= "1.png";
+document.getElementById("diceseven").src= "1.png";
+document.getElementById("diceeight").src= "1.png";
+document.getElementById("dicenine").srcL= "1.png";
+document.getElementById("diceten").src= "1.png";
+
+document.getElementById("firsttotal").innerHTML = " Total ";
+document.getElementById("secondtotal").innerHTML = " Total ";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("amountoftimesrolled").innerHTML = 0;
+
+
+
+
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </script>
+<body>
+ 
+<div class = "human"></div>  
+
+<div class = "diceone"> <img src = "1.png" id = "diceone">
+</div>
+
+<div class = "dicetwo"> <img src = "1.png" id = "dicetwo">
+ </div>
+
+
+<div class = "dicethree"> <img src = "1.png" id = "dicethree">
+</div>
+
+<div class = "dicefour"> <img src = "1.png" id = "dicefour">
+</div>
+
+<div class = "dicefive"> <img src = "1.png" id = "dicefive">
+</div>
+
+<div class = "total"> <p id = "firsttotal"> Total </p>
+</div>
+
+
+<div class = "checkboxone"> <input type = "checkbox" id = "checkone">
+  </div>
+
+
+<div class = "checkboxtwo"> <input type = "checkbox" id = "checktwo">
+</div>
+
+<div class = "checkboxthree"> <input type = "checkbox" id = "checkthree">
+</div>
+
+
+<div class = "checkboxfour"> <input type = "checkbox" id = "checkfour">
+</div>
+
+
+<div class = "checkboxfive"> <input type = "checkbox" id = "checkfive">
+</div>
+
+<div class = "dicesix"> <img src = "1.png" id = "dicesix">
+</div>
+
+<div class = "diceseven"> <img src = "1.png" id = "diceseven">
+</div>
+
+
+<div class = "diceeight"> <img src = "1.png" id = "diceeight">
+</div>
+
+
+<div class = "dicenine"> <img src = "1.png" id = "dicenine">
+</div>
+
+
+<div class = "diceten"> <img src = "1.png" id = "diceten">
+</div>
+
+<div class = "totaltwo"> <p id = "secondtotal"> Total </p>
+</div>
+
+<div class = "checkboxsix"> <input type = "checkbox" id = "checksix">
+</div>
+
+<div class = "checkboxseven"> <input type = "checkbox" id = "checkseven">
+</div>
+
+<div class = "checkboxeight"> <input type = "checkbox" id = "checkeight">
+</div>
+
+<div class = "checkboxnine"> <input type = "checkbox" id = "checknine">
+</div>
+
+<div class = "checkboxten"> <input type = "checkbox" id = "checkten">
+</div>
+
+<div class = "rollagain"></div>
+<button onclick = "diceone()">  Press me to roll the dice! </button>
+
+<div class = "amountofrolls"> </div>
+<p id  = "amountoftimesrolled"> Total rolls are  </p>
+
+<div class = "newround"></div>
+<button onclick = "newround()"> Press me to play a new round! </button>   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</HTML>
